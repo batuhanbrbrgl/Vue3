@@ -4,8 +4,9 @@
   <input type="text" ref="parola">
   <button @click="handClick">Tıkla</button>
   <br/> -->
-  <Header/>
+  <Header @temizle="sil"/>
   <h1>CLI ile Proje oluşturma</h1>
+  <input ref="metin"/>
 </template>
 
 <script>
@@ -21,13 +22,17 @@ export default {
 
   data(){
     return{
-      baslik:'Merhaba Vue CLI',
+      yazi:'Merhaba Vue CLI',
       sonuc:''
     }
   },
   methods:{
     handClick(){
       console.log(this.$refs.isim.value)
+    },
+  
+    sil(){
+      this.$refs.metin.value=''
     }
   }
 }
