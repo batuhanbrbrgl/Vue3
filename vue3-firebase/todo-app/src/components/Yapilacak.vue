@@ -3,9 +3,10 @@
     <div class="baslik" >
         <h3 @click="detayac">{{yapilacak.baslik}}</h3>
         <div class="icon">
-            <span class="material-symbols-outlined">
+            <router-link :to="{name:'YapilacakGuncelle',params:{id:yapilacak.id}}"><span class="material-symbols-outlined">
                 edit
-                </span>
+                </span></router-link>
+            
             <span class="material-symbols-outlined" @click="toggle">
                 done_outline
                 </span>
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+import YapilacakGüncelle from '@/views/YapilacakGüncelle.vue'
+
 export default {
 props:['yapilacak'],
 data(){
